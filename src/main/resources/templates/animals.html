@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Animals</title>
+</head>
+<body>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Owner</th>
+        <th>Pet name</th>
+        <th>Type</th>
+        <th>Age</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="animal : ${animals}">
+        <tr>
+            <td th:text="${animal.id}"/>
+            <td th:text="${animal.owner}"/>
+            <td th:text="${animal.name}"/>
+            <td th:text="${animal.type}"/>
+            <td th:text="${animal.age}"/>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
+</body>
+</html>
